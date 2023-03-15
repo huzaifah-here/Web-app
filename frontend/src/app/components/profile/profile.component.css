@@ -1,0 +1,10 @@
+.mat-mdc-card-header {
+    display: flex;
+    padding: 16px 16px 16px 40%;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 150px 10px;
+    
+}

@@ -1,0 +1,40 @@
+<br>
+<br>
+<br>
+<br>
+
+<form [formGroup]="loginForm"  class="form-container">
+    <mat-card style="box-shadow:  1px 2px 10px 0 #3f51b5;">
+      <mat-card-header style="justify-content: center;">
+        <mat-card-title >Sign In</mat-card-title>
+        <br><br>
+      </mat-card-header>
+      <mat-card-content>
+        
+          <div class="col-md-6">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+              <input  formControlName="email" matInput placeholder="Email "  [(ngModel)]="user.email">
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+              <!-- <input type="password" formControlName="password" matInput placeholder="Password " required [(ngModel)]="user.password"> -->
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" [(ngModel)]="user.password" required>
+            <button mat-icon-button class="toggle-btn" (click)="togglePassword($event)" [attr.aria-label]="hide ? 'Show password' : 'Hide password'">
+              <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            </mat-form-field>
+
+          </div>
+        
+
+       
+        <mat-card-actions>
+            <button (click)="onLogin()" mat-raised-button color="primary">Login</button>
+          </mat-card-actions>
+      </mat-card-content>
+      
+    </mat-card>
+  </form>

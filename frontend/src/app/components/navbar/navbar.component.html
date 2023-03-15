@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+<style>
+body {
+  font-size: 20px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #3f51b5;
+}
+
+.nav-profile{
+  float: right;
+}
+
+</style>
+</head>
+
+
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  
+  <li class="nav-profile"><a mat-button *ngIf="isLoggedIn()" (click)="logout()">Logout</a></li>
+  <li class="nav-profile"><a mat-button *ngIf="isLoggedIn()" routerLink="/profile">{{name}}</a></li>
+  
+</ul>
+
+
